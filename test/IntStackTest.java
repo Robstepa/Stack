@@ -55,4 +55,9 @@ class IntStackTest {
         Stack<String> stack = new Stack<>();
         assertThrows(CustomStackException.class, ()-> stack.pop());
     }
+
+    @Test
+    void testCreateInstanceWithNegativeSize(){
+        assertThrows(NegativeArraySizeException.class, ()-> new Stack<>(-2));
+    }
 }
