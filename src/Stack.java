@@ -36,6 +36,16 @@ public class Stack<T> implements StackInterface<T> {
         return array[top];
     }
 
+    @Override
+    public boolean contains(T t){
+        for (T element : array){
+            if (element.equals(t)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private boolean isFull(){
         return top == array.length - 1;
     }

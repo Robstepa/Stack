@@ -2,7 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IntStackTest {
+class StackTest {
 
     @Test
     void testCreateInstance(){
@@ -59,5 +59,15 @@ class IntStackTest {
     @Test
     void testCreateInstanceWithNegativeSize(){
         assertThrows(NegativeArraySizeException.class, ()-> new Stack<>(-2));
+    }
+
+    @Test
+    void testContains(){
+        Stack<String> stack = new Stack<>();
+        String a = "a";
+        String b = "b";
+        stack.push(a);
+        stack.push(b);
+        assertTrue(stack.contains("a"));
     }
 }
